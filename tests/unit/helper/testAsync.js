@@ -7,4 +7,20 @@ const mockFetchData = (cb) => {
   }, 1000);
 };
 
-module.exports = mockFetchData;
+const mockPromise = () => new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('mock promise!');
+  }, 200);
+});
+
+const mockPromiseReject = () => new Promise((resolve, reject) => {
+  setTimeout(() => {
+    reject('error!');
+  }, 200);
+});
+
+module.exports = {
+  mockFetchData,
+  mockPromise,
+  mockPromiseReject,
+};
