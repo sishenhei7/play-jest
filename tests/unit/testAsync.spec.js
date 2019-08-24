@@ -1,11 +1,6 @@
 // https://jestjs.io/docs/en/asynchronous
 // callbacks
-function mockFetchData(cb) {
-  setTimeout(() => {
-    const data = { a: 1 };
-    cb(data);
-  }, 1000);
-}
+const mockFetchData = require('./helper/testAsync');
 
 test('mock fetch data', () => {
   const callback = data => {
