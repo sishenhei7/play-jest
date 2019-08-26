@@ -1,10 +1,10 @@
 // https://jestjs.io/docs/en/asynchronous
 // callbacks
-const {
+import {
   mockFetchData,
   mockPromise,
   mockPromiseReject,
-} = require('./helper/testAsync');
+} from './helper/testAsync';
 
 test('mock fetch data', done => {
   const callback = data => {

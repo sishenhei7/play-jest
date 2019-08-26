@@ -19,7 +19,7 @@ const mockPromiseReject = () => new Promise((resolve, reject) => {
   }, 200);
 });
 
-module.exports = {
+export {
   mockFetchData,
   mockPromise,
   mockPromiseReject,

@@ -1,4 +1,11 @@
-const forEach = require('./helper/testMockFunc');
+import axios from 'axios';
+
+const {
+  forEach,
+  Users,
+} = require('./helper/testMockFunc');
+
+jest.mock('axios');
 
 // using a mock function
 test('test mock function', () => {
@@ -54,4 +61,17 @@ test('mock functional continuation-passing style', () => {
   console.log(myMock.mock);
 });
 
+// mocking modules
+test('should fetch users', () => {
+  const users = [
+    {
+      name: 'haha',
+    },
+  ];
+
+  const res = { data: users };
+  axios.get.mockResolvedValue(res);
+
+  return Users.all().then(data => expect(data).toEqual(users));
+});
 
