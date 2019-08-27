@@ -12,7 +12,7 @@ class Users {
   }
 }
 
-module.exports = {
+export {
   forEach,
   Users,
 };

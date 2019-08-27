@@ -1,7 +1,10 @@
 module.exports = {
   presets: [
-    ["@vue/app", {
-      useBuiltIns: "usage"
-    }]
-  ]
+    [
+      "@vue/app",
+      {
+        useBuiltIns: "usage",
+      },
+    ],
+  ],
 };

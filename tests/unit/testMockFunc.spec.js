@@ -1,11 +1,12 @@
 import axios from 'axios';
-
-const {
+import {
   forEach,
   Users,
-} = require('./helper/testMockFunc');
+} from './helper/testMockFunc';
+import foo from './helper/testMockImplementation';
 
 jest.mock('axios');
+jest.mock('./helper/testMockImplementation');
 
 // using a mock function
 test('test mock function', () => {
@@ -74,4 +75,22 @@ test('should fetch users', () => {
 
   return Users.all().then(data => expect(data).toEqual(users));
 });
+
+// mock implementation
+test('mock implementation', () => {
+  foo.mockImplementation(() => 42);
+  console.log('foo', foo());
+
+  const myMockFn = jest
+    .fn(() => 'default')
+    .mockImplementationOnce(() => 'first call')
+    .mockImplementationOnce(() => 'second call');
+  console.log(myMockFn(), myMockFn(), myMockFn(), myMockFn());
+
+  const myObj = {
+    myMethod: jest.fn().mockReturnThis(),
+  };
+  expect(myObj.myMethod()).toEqual(myObj);
+});
+
 
