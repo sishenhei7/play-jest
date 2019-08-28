@@ -13,7 +13,7 @@ describe('test CounterJs', () => {
     expect(wrapper.html()).toEqual(expectedDom);
   });
 
-  test('renders correct after button click', () => {
+  it('renders correct after button click', () => {
     const button = wrapper.find('button');
     button.trigger('click');
     expect(wrapper.vm.count).toBe(1);
@@ -29,7 +29,7 @@ describe('test CounterVue', () => {
     expect(wrapper.html()).toEqual(expectedDom);
   });
 
-  test('renders correct after button click', () => {
+  it('renders correct after button click', () => {
     const button = wrapper.find('button');
     button.trigger('click');
     expect(wrapper.vm.count).toBe(1);
