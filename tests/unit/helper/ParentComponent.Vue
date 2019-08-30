@@ -15,9 +15,9 @@ export default {
   components: { ChildComponent },
   data() {
     return {
-      emitted: false;
-      called: false;
-    }
+      emitted: false,
+      called: false,
+    };
   },
   created() {
     this.childModule = new ChildModule({
