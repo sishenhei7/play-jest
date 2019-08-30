@@ -1,3 +1,4 @@
+import Vue from 'vue';
 import { shallowMount } from '@vue/test-utils';
 import ChildModule from './helper/ChildModule';
 import ChildComponent from './helper/ChildComponent';
@@ -22,9 +23,9 @@ describe('emit custom event', () => {
     expect(wrapper.html()).toContain('Emitted!');
   });
 
-  it("displays 'Called!' when callback is called", () => {
+  it("displays 'Called!' when callback is called", async () => {
     const wrapper = shallowMount(ParentComponent);
-    const callback = ChildModule.mock.calls[0].callback;
+    const callback = ChildModule.mock.calls[0][0].callback;
 
     callback();
     expect(wrapper.vm.called).toBeTruthy;
@@ -32,8 +33,12 @@ describe('emit custom event', () => {
 
     // 销毁组件
     expect(mockDestroy).toHaveBeenCalledTimes(0);
-    wrapper.$destroy();
-    expect(mockDestroy).toHaveBeenCalledTimes(1);
+    wrapper.vm.$destroy();
+    // await Vue.nextTick();
+    // expect(mockDestroy).toHaveBeenCalledTimes(1);
+    setTimeout(() => {
+      expect(mockDestroy).toHaveBeenCalledTimes(1);
+    }, 1000);
   });
 });
 

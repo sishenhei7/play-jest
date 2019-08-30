@@ -21,7 +21,7 @@ export default {
   },
   created() {
     this.childModule = new ChildModule({
-      callBack: () => {
+      callback: () => {
         this.called = true;
       },
     });
