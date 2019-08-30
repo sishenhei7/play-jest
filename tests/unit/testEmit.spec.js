@@ -25,9 +25,7 @@ describe('emit custom event', () => {
 
   it("displays 'Called!' when callback is called", async () => {
     const wrapper = shallowMount(ParentComponent);
-    const callback = ChildModule.mock.calls[0][0].callback;
-
-    callback();
+    ChildModule.mock.calls[0][0].callback();
     expect(wrapper.vm.called).toBeTruthy;
     expect(wrapper.html()).toContain('Called!');
 
