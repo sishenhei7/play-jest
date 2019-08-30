@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils';
-import CounterJs from './helper/counter';
+import CounterJs from './helper/Counter';
 import CounterVue from './helper/Counter.vue';
 
 const expectedDom = '<div><span class="count">0</span> <button>Increment</button></div>';
