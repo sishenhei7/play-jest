@@ -2,7 +2,7 @@ import Vue from 'vue';
 import { shallowMount } from '@vue/test-utils';
 import ChildModule from './helper/ChildModule';
 import ChildComponent from './helper/ChildComponent';
-import ParentComponent from './helper/ParentComponent.vue';
+import ParentComponent from './helper/ParentComponent';
 
 jest.mock('./helper/ChildModule');
 const mockDestroy = jest.fn();
