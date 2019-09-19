@@ -16,4 +16,8 @@ yarn test:unit
 
 Note that [directly running jest will fail](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-jest), and you should run tests with ```vue-cli-service test:unit```.
 
+## Notice
+
+Notice that I make a goal to **test vue.js by jest**。So I move the historical test files to the history folder!
+
 
